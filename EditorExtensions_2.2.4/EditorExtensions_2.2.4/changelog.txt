@@ -1,0 +1,828 @@
+---------------------------------------------------------------------------------------------------
+Version: 2.2.4
+Date: 2023-12-20
+  Bugfixes:
+    - Fixed accidental log spam when removing an infinity wagon. (#159)
+---------------------------------------------------------------------------------------------------
+Version: 2.2.3
+Date: 2023-12-12
+  Bugfixes:
+    - Fixed a small typo in the testing lab warning message. (#156)
+    - Fixed that infinity wagon proxies could become orphaned and never be cleaned up. (#151)
+---------------------------------------------------------------------------------------------------
+Version: 2.2.2
+Date: 2023-10-14
+  Bugfixes:
+    - Fixed that mining an infinity pipe with the GUI open would not close the GUI (#149).
+    - Fixed that infinity loaders had the wrong map color (#150).
+---------------------------------------------------------------------------------------------------
+Version: 2.2.1
+Date: 2023-08-30
+  Bugfixes:
+    - Fixed an occasional crash when copy/pasting settings on an infinity accumulator (#146)
+---------------------------------------------------------------------------------------------------
+Version: 2.2.0
+Date: 2023-08-25
+  Features:
+    - If you are riding a vehicle when you toggle the testing lab, you will return to that vehicle when toggling back (#144)
+  Bugfixes:
+    - Fixed being unable to load the game when using the Polish language for real this time (#142)
+    - Fixed that exiting the testing lab with a full inventory when the testing force has a larger inventory slots bonus than the real force would spill items into the real world (they now spill into the lab instead) (#143)
+---------------------------------------------------------------------------------------------------
+Version: 2.1.5
+Date: 2023-07-04
+  Bugfixes:
+    - Fixed being unable to load the game when using the Polish language (#142)
+---------------------------------------------------------------------------------------------------
+Version: 2.1.4
+Date: 2023-06-24
+  Bugfixes:
+    - Fixed a crash when a mod calls get_player_proper_force before mod initialization has completed (#141)
+---------------------------------------------------------------------------------------------------
+Version: 2.1.3
+Date: 2023-06-04
+  Bugfixes:
+    - Fixed a crash when removing an infinity pipe with its GUI open (#134)
+    - Fixed that recipe notifications were not cleared when using /cheat (#137)
+---------------------------------------------------------------------------------------------------
+Version: 2.1.2
+Date: 2023-04-15
+  Bugfixes:
+    - Fixed being unable to enter decimal values in the infinity accumulator GUI (#124)
+    - Fixed being unable to load testing scenarios from before 1.13.7 (#127)
+---------------------------------------------------------------------------------------------------
+Version: 2.1.1
+Date: 2023-04-06
+  Changes:
+    - [Space Exploration] Changed spaceship editor restriction to only apply when the testing lab is enabled (#123)
+    - Updated translations from Crowdin
+---------------------------------------------------------------------------------------------------
+Version: 2.1.0
+Date: 2023-04-03
+  Features:
+    - Added a super substation and infinity accumulator to the debug world
+    - Re-added copy/paste between infinity loaders and constant combinators (#120)
+    - Re-added copy/paste between infinity pipes and constant combinators
+  Changes:
+    - Changed the map colors of lab tiles when using the "all light" graphics option to make them visible on the map (#117)
+  Bugfixes:
+    - Fixed that the character reach distance was not increased when entering the debug world or testing scenario
+    - Fixed that the testing scenario would have incorrect map colors if lab tile graphics were changed (#117)
+    - [Space Exploration] Disallowed toggling the map editor while on a spaceship to avoid getting stuck in empty space (#116)
+    - [Space Exploration] Fixed that the editor shortcut availability did not correctly handle the satellite view (#106)
+---------------------------------------------------------------------------------------------------
+Version: 2.0.6
+Date: 2023-03-26
+  Bugfixes:
+    - Fixed a crash when a player is removed before mod initialization is complete (#114)
+    - [Space Exploration] Fixed that the infinity loader and super beacon could not be placed in space zones (#113)
+---------------------------------------------------------------------------------------------------
+Version: 2.0.5
+Date: 2023-03-25
+  Bugfixes:
+    - Fixed a crash when rotating an invalid entity (#112)
+    - Fixed formatting of fluid content in the infinity pipe GUI (#111)
+---------------------------------------------------------------------------------------------------
+Version: 2.0.4
+Date: 2023-03-20
+  Bugfixes:
+    - Fixed get_player_proper_force interface not working properly
+---------------------------------------------------------------------------------------------------
+Version: 2.0.3
+Date: 2023-03-19
+  Bugfixes:
+    - Fixed a crash when a mod destroys an open infinity loader without raising an event (#110)
+    - Fixed flib dependency causing broken GUIs (#108)
+---------------------------------------------------------------------------------------------------
+Version: 2.0.2
+Date: 2023-03-12
+  Bugfixes:
+    - Fixed that the update notification would show when upgrading from 2.0.0 to a newer version (#104)
+---------------------------------------------------------------------------------------------------
+Version: 2.0.1
+Date: 2023-03-11
+  Bugfixes:
+    - Fixed a crash when opening the star map in Space Exploration (#102)
+---------------------------------------------------------------------------------------------------
+Version: 2.0.0
+Date: 2023-03-10
+  Info:
+    - This is a BREAKING UPDATE. Your existing testing setups will no longer function as they once did.
+  Features:
+    - Added per-player setting to automatically enable alt-mode
+    - Infinity loaders can snap to belt ghosts
+  Changes:
+    - Changed the default toggle editor hotkey to Control + Alt + E
+    - Infinity loader and linked belt no longer snap belt type. Instead, they are always at the max belt speed
+    - Infinity loader only supports a single filter; to put a different item on each half of a belt, use two loaders
+    - Infinity loaders will only snap when they are built; they will not snap when you place or rotate a belt in front of them
+    - Map editor availability is gated behind the "toggle map editor" permission
+    - Removed the '/cheatmode' command in favor of the built-in '/cheat' command
+      - Consequently, you can no longer enable cheat mode without disabling achievements in your game
+    - Testing labs will sync active research to parent force by default (can be disabled)
+  Optimizations:
+    - Significantly reduced infinity loader UPS impact
+  Compatibility:
+    - Added remote interface to enable or disable testing recipes
+    - Testing recipes will not automatically enable when entering cheat mode; `/cheat` must be used explicitly
+  Bugfixes:
+    - Fixed several edge cases with infinity loader filters and snapping
+    - Fixed that entering then exiting the testing lab when personal robots were deployed would leave them behind in the lab world
+    - Fixed that inventory sync would function outside of cheat mode
+    - Fixed that items on belts would be compressed when placing infinity loaders or linked belts next to them
+    - Fixed that the infinity loader was not guaranteed to fill/consume high speed belts perfectly
+---------------------------------------------------------------------------------------------------
+Version: 1.13.7
+Date: 2022-12-02
+  Bugfixes:
+    - Fixed a crash when placing an aggregate chest
+---------------------------------------------------------------------------------------------------
+Version: 1.13.6
+Date: 2022-12-01
+  Changes:
+    - Updated testing scenario script in preparation for its removal in version 2.0
+---------------------------------------------------------------------------------------------------
+Version: 1.13.5
+Date: 2022-09-16
+  Bugfixes:
+    - Fixed several crashes when processing blueprints that have been edited by other mods (https://todo.sr.ht/~raiguard/factorio-mods/64)
+    - Fixed that the infinity pipe's amount type was not carried over when adjusting the capacity
+---------------------------------------------------------------------------------------------------
+Version: 1.13.4
+Date: 2022-07-03
+  Features:
+    - Warn the player about the passage of time when entering the testing lab for the first time (https://todo.sr.ht/~raiguard/factorio-mods/44)
+  Bugfixes:
+    - Fixed duplicate info icons on mod settings with tooltips in newer versions of Factorio
+    - Fixed that two surfaces were being created per testing lab
+---------------------------------------------------------------------------------------------------
+Version: 1.13.3
+Date: 2022-06-22
+  Changes:
+    - Inventory sync will overwrite the destination inventory's contents (https://todo.sr.ht/~raiguard/factorio-mods/36)
+---------------------------------------------------------------------------------------------------
+Version: 1.13.2
+Date: 2022-06-21
+  Bugfixes:
+    - Fixed a crash when the infinity accumulator GUI data is deleted, but the GUI remains behind (https://todo.sr.ht/~raiguard/factorio-mods/34)
+    - Fixed that items could get deleted from your inventory when exiting the editor (https://todo.sr.ht/~raiguard/factorio-mods/33)
+---------------------------------------------------------------------------------------------------
+Version: 1.13.1
+Date: 2022-06-12
+  Bugfixes:
+    - Fixed a crash when toggling the editor while holding an item from the ammo or armor inventories with inventory sync enabled (https://todo.sr.ht/~raiguard/factorio-mods/27)
+---------------------------------------------------------------------------------------------------
+Version: 1.13.0
+Date: 2022-05-29
+  Features:
+    - Added a map setting to sync testing force technologies with their parent forces
+  Changes:
+    - Changed "shared" testing labs to "force", and changed the behavior to match
+---------------------------------------------------------------------------------------------------
+Version: 1.12.10
+Date: 2022-04-14
+  Bugfixes:
+    - Fixed a crash when holding an item in a slot that no longer exists while exiting the editor (#95)
+---------------------------------------------------------------------------------------------------
+Version: 1.12.9
+Date: 2022-04-13
+  Bugfixes:
+    - Fixed a crash when Task List was active (#94)
+---------------------------------------------------------------------------------------------------
+Version: 1.12.8
+Date: 2022-03-14
+  Bugfixes:
+    - Fixed several edge cases with the testing lab and switching forces while in the editor (#92)
+---------------------------------------------------------------------------------------------------
+Version: 1.12.7
+Date: 2022-02-25
+  Changes:
+    - Updated Russian locale (by Astorin) (#89)
+  Bugfixes:
+    - Fixed belt type detection for Krastorio 2 loaders (#91)
+---------------------------------------------------------------------------------------------------
+Version: 1.12.6
+Date: 2022-01-27
+  Compatibility:
+    - Added a remote interface function `get_player_proper_force` to get the player's force when they're inside the testing lab
+---------------------------------------------------------------------------------------------------
+Version: 1.12.5
+Date: 2022-01-22
+  Bugfixes:
+    - Fixed a crash when an infinity pipe is removed from a blueprint prematurely (#86)
+    - Fixed error message when an infinity loader snapped to a ghost belt (#85)
+---------------------------------------------------------------------------------------------------
+Version: 1.12.4
+Date: 2022-01-18
+  Bugfixes:
+    - Fixed that your force would no longer change when entering the testing lab
+---------------------------------------------------------------------------------------------------
+Version: 1.12.3
+Date: 2022-01-18
+  Bugfixes:
+    - Fixed that personal robots that were out when switching to the testing lab would not have their force restored when switching back
+---------------------------------------------------------------------------------------------------
+Version: 1.12.2
+Date: 2022-01-10
+  Bugfixes:
+    - Fixed ANOTHER crash due to a syntax error (editor undo mistake)
+---------------------------------------------------------------------------------------------------
+Version: 1.12.1
+Date: 2022-01-10
+  Bugfixes:
+    - Fixed a crash due to a syntax error
+---------------------------------------------------------------------------------------------------
+Version: 1.12.0
+Date: 2022-01-10
+  Features:
+    - Added a custom GUI for the infinity pipe
+      - Amount of fluid currently in the pipe is shown in the GUI
+      - New "units" mode allows you to specify exact units for the filter instead of a percentage
+      - The pipe's capacity can be changed between 100, 500, 1000, 5000, 10000, 25000, 50000, and 100000
+    - Added a custom event for when the debug world has finished setup
+    - Added a per-player setting to start the debug world or testing scenario in the map editor
+    - Added a startup setting to change the appearance of lab tiles
+---------------------------------------------------------------------------------------------------
+Version: 1.11.2
+Date: 2021-11-01
+  Bugfixes:
+    - Fixed a typo preventing the testing lab forces from being created
+---------------------------------------------------------------------------------------------------
+Version: 1.11.1
+Date: 2021-11-01
+  Changes:
+    - The testing lab now uses a separate force from your regular game
+    - Updated Russian locale (by Astorin)
+  Bugfixes:
+    - Fixed a crash when Youki Industries is enabled (#79)
+---------------------------------------------------------------------------------------------------
+Version: 1.11.0
+Date: 2021-10-21
+  Features:
+    - Added "testing lab" feature, which teleports you to a lab surface when entering the map editor, then back out when you leave
+      - This is disabled by default and must be enabled on a per-player basis
+      - You can choose between a personal lab and a shared lab
+      - If you also disable inventory sync, this becomes a cheat-free way to test setups in the same map as your actual game
+---------------------------------------------------------------------------------------------------
+Version: 1.10.0
+Date: 2021-10-02
+  Features:
+    - Control + clicking "Single player" or "New game" in the main menu will generate a 50x50 freeplay world with lab tiles and cheat mode enabled
+      - This can be disabled in the mod settings, if you'd rather use the vanilla debug world
+  Compatibility:
+    - Added support for `Better Belts` to the infinity loader
+  Bugfixes:
+    - Fixed a crash with the `Classic Beacon` mod
+    - Fixed infinity loaders not being compatible with yellow Krastorio 2 loaders
+    - Removed conditional registration of on_tick event to fix a rare desync
+---------------------------------------------------------------------------------------------------
+Version: 1.9.16
+Date: 2021-08-08
+  Changes:
+    - Updated Russian locale
+  Bugfixes:
+    - Fixed missing slots in the aggregate chest with DeadlockStackingForAngels enabled
+    - Fixed that the infinity wagon `remove unfiltered items` setting wasn't saved in blueprints
+---------------------------------------------------------------------------------------------------
+Version: 1.9.15
+Date: 2021-07-18
+  Changes:
+    - Changed infinity wagon speed caps to match the super locomotive
+  Bugfixes:
+    - Fixed filter miniload detection for the infinity loader
+---------------------------------------------------------------------------------------------------
+Version: 1.9.14
+Date: 2021-07-14
+  Changes:
+    - Typing an invalid cheatmode subcommand will print a message saying so
+  Bugfixes:
+    - Fixed default miniloader detection for the infinity loader
+---------------------------------------------------------------------------------------------------
+Version: 1.9.13
+Date: 2021-04-25
+  Bugfixes:
+    - Fixed infinity fluid wagons only being changeable by admins
+    - Updated flib dependency to fix crashes for those with an old version
+---------------------------------------------------------------------------------------------------
+Version: 1.9.12
+Date: 2021-04-15
+  Changes:
+    - Infinity chest and linked chest settings can now be changed by anyone, not just admins
+---------------------------------------------------------------------------------------------------
+Version: 1.9.11
+Date: 2021-03-08
+  Changes:
+    - Updated Russian locale (credit to Astorin)
+  Bugfixes:
+    - Fixed a crash when an invalid infinity wagon is stored in `global` on migration
+---------------------------------------------------------------------------------------------------
+Version: 1.9.10
+Date: 2021-03-02
+  Changes:
+    - Adjusted GUI titlebar styling
+    - Changed super pump default speed to 12,000/s
+    - Improved super pump "open default GUI" icon
+  Bugfixes:
+    - Fixed super pump textifield incorrectly setting the slider
+---------------------------------------------------------------------------------------------------
+Version: 1.9.9
+Date: 2021-02-28
+  Changes:
+    - Infinity inventory filters import/export dialog will now close independently of the controller GUI
+    - Testing tool recipes will only be enabed if they're not already - avoiding duplicate new recipe notifications
+  Optimizations:
+    - Infinity wagon proxies will only be teleported if the wagon has moved
+---------------------------------------------------------------------------------------------------
+Version: 1.9.8
+Date: 2021-02-21
+  Features:
+    - Added compatibility with Quick Item Search, as the default hotkeys conflict
+  Changes:
+    - Aggregate chests wipe their filters before being saved in blueprints, to significantly decrease blueprint string size
+    - Copy/pasting from a constant combinator to an infinity pipe will set the pipe to produce instead of consume
+    - Disabled editing of infinity filters on aggregate chests
+  Bugfixes:
+    - Fixed a crash related to selecting a new blueprint inside of a blueprint book
+    - Fixed a crash when using the `/cheatmode` command in the map editor
+    - Fixed a potential crash if adding EE to an existing save when in the Space Exploration satellite view
+    - Fixed that aggregate chests placed from blueprints after a mod added items would have a limiter bar set
+---------------------------------------------------------------------------------------------------
+Version: 1.9.7
+Date: 2021-01-26
+  Bugfixes:
+    - Fixed a crash related to the satellite view fix in 1.9.6
+---------------------------------------------------------------------------------------------------
+Version: 1.9.6
+Date: 2021-01-25
+  Features:
+    - Added miniloader belt type compatibility to the infinity loader
+  Bugfixes:
+    - Fixed that being in the SE satellite view when mod confiration changes would enable the testing tool recipes
+---------------------------------------------------------------------------------------------------
+Version: 1.9.5
+Date: 2020-12-25
+  Bugfixes:
+    - Fixed a crash when placing an infinity loader on a brand-new map
+---------------------------------------------------------------------------------------------------
+Version: 1.9.4
+Date: 2020-12-24
+  Changes:
+    - Infinity loaders and linked belts will default to the fastest belt speed in the current modset, instead of being hardcoded at express belts
+  Bugfixes:
+    - Fixed that the linked belt item would have an invalid place_result between data stages, leading to some compatibility errors
+---------------------------------------------------------------------------------------------------
+Version: 1.9.3
+Date: 2020-12-17
+  Bugfixes:
+    - Fixed a crash when opening an infinity cargo wagon
+    - Fixed a crash when shift+clicking a linked belt twice
+    - Fixed being unable to open infinity fluid wagons if they had an equipment grid
+---------------------------------------------------------------------------------------------------
+Version: 1.9.2
+Date: 2020-12-16
+  Bugfixes:
+    - Fixed several issues with mining linked belts in multiplayer and with robots
+---------------------------------------------------------------------------------------------------
+Version: 1.9.1
+Date: 2020-12-16
+  Bugfixes:
+    - Fixed a crash when mining a linked belt when that linked belt is selected for linking
+---------------------------------------------------------------------------------------------------
+Version: 1.9.0
+Date: 2020-12-16
+  Features:
+    - Added linked belt
+      - These can connect to other linked belts in arbitrary locations, even across surfaces
+      - Click a linked belt to start a connection, then click another one to link them
+      - Shift + right-click a linked belt to sever its link
+      - Control + left-click a linked belt to sync its belt type to the other end
+      - Linked belts will snap their belt type, similar to infinity loaders
+      - Linked belts will also snap direction if they don't currently have a link
+      - Links will be preserved in blueprints, so long as both ends of the link are in the blueprint
+    - Added linked chest
+      - These share an inventory with other linked chests on the same channel
+  Changes:
+    - Infinity loaders now use the linked belt graphics instead of desaturated graphics
+    - Significantly simplified infinity loader snapping code
+  Bugfixes:
+    - Fixed cheat equipment not being tinted purple
+---------------------------------------------------------------------------------------------------
+Version: 1.8.3
+Date: 2020-11-29
+  Changes:
+    - Made internal changes to make it possible to extend the testing scenario's scripting for testing mods
+    - Removed now-defunct rocket silo stats GUI code from the testing scenario
+  Bugfixes:
+    - Fixed inventory sync not deleting filters properly
+---------------------------------------------------------------------------------------------------
+Version: 1.8.2
+Date: 2020-11-29
+  Changes:
+    - Updated crafting group icon
+  Bugfixes:
+    - Fixed a crash and several behavioral issues with copy/paste for infinity pipes and infinity loaders
+---------------------------------------------------------------------------------------------------
+Version: 1.8.1
+Date: 2020-11-29
+  Bugfixes:
+    - Fixed entity GUI close buttons not working
+    - Fixed a crash when mining an infinity loader while its GUI was open
+---------------------------------------------------------------------------------------------------
+Version: 1.8.0
+Date: 2020-11-23
+  Features:
+    - Added super battery equipment
+    - Added `/cheatmode` command, meant to be used in place of `/cheat`
+      - No parameter will emulate `/cheat` and enable testing tool recipes
+      - `all` parameter does everything previously listed, and provides infinity items and equipment to the player
+      - `off` parameter disables cheat mode and testing tool recipes
+  Changes:
+    - Updated to Factorio 1.1
+    - Updated entity GUIs to match new vanilla style
+    - Relocated infinity filter buttons from the bottom-left corner to being anchored on the editor GUI
+    - Updated testing scenario map to include a super radar
+    - Increased super roboport slots from 7 to 10
+    - The mod no longer hijacks the vanilla `/cheat` command, instead using the aforementioned custom `/cheatmode` command
+    - Removed `/EditorExtensions` command
+    - Refined crafting group icon to better fit the other new icons
+  Bugfixes:
+    - Fixed edge-case with IL chest filter setting
+---------------------------------------------------------------------------------------------------
+Version: 1.7.5
+Date: 2020-11-14
+  Changes:
+    - Moved the testing scenario's actual code outside of the scenario script itself, to avoid issues with migrations
+---------------------------------------------------------------------------------------------------
+Version: 1.7.4
+Date: 2020-11-05
+  Bugfixes:
+    - Fixed a crash when copy / pasting to an infinity loader from anything but a constant combinator
+---------------------------------------------------------------------------------------------------
+Version: 1.7.3
+Date: 2020-10-30
+  Bugfixes:
+    - Fixed various crashes caused by the removal of the toggle-inventory-sync command
+    - Fixed typo in infinity loader error message
+---------------------------------------------------------------------------------------------------
+Version: 1.7.2
+Date: 2020-10-30
+  Changes:
+    - Removed the toggle-inventory-sync command, it is redundant due to the inventory sync per-player setting
+  Bugfixes:
+    - Fixed a crash when entering a mini-tutorial
+---------------------------------------------------------------------------------------------------
+Version: 1.7.1
+Date: 2020-10-22
+  Changes:
+    - Rewrote infinity pipe <-> constant combinator copy / paste to use prototype properties instead of runtime hacks
+---------------------------------------------------------------------------------------------------
+Version: 1.7.0
+Date: 2020-10-22
+  Features:
+    - Added copy / paste support between infinity pipes and constant combinators
+    - Added support for decimal values to the Infinity Accumulator GUI
+    - When in the map editor, mod_gui buttons and frames will be pushed to the right, so they remain visible
+---------------------------------------------------------------------------------------------------
+Version: 1.6.2
+Date: 2020-10-19
+  Bugfixes:
+    - Fixed a crash when pasting to an Infinity Loader from an entity with no control behavior
+    - Fixed missing infinity loader locale
+    - Fixed that infinity loader entities were upgradable
+---------------------------------------------------------------------------------------------------
+Version: 1.6.1
+Date: 2020-10-06
+  Bugfixes:
+    - Fixed a crash when disabling cheat mode when the reach distance bonus wasn't being applied correctly
+    - Fixed that the character bonuses would compound if `/cheat all` was typed multiple times
+---------------------------------------------------------------------------------------------------
+Version: 1.6.0
+Date: 2020-10-01
+  Features:
+    - Super pump has been redesigned, and now sports an adjustable pumping speed with a custom GUI
+  Bugfixes:
+    - Fixed broken performance warning rich text on infinity wagon tooltips
+    - Fixed a crash when the scenario would toggle the map editor before EE loaded the player's data
+---------------------------------------------------------------------------------------------------
+Version: 1.5.22
+Date: 2020-09-26
+  Bugfixes:
+    - Fixed items spilling during inventory sync when the character's inventory was full
+---------------------------------------------------------------------------------------------------
+Version: 1.5.21
+Date: 2020-09-25
+  Features:
+    - Added "tertiary" as a selectable priority for infinity accumulator input/output
+  Bugfixes:
+    - Fixed incorrect IA buffer size scaling leading to incorrect power production / consumption possibility numbers
+    - Fixed prototype migration filenames to actually run in order
+---------------------------------------------------------------------------------------------------
+Version: 1.5.20
+Date: 2020-09-17
+  Bugfixes:
+    - Fixed a crash when Cursor Enhancements was active and mod versions changed
+---------------------------------------------------------------------------------------------------
+Version: 1.5.19
+Date: 2020-09-17
+  Changes:
+    - Changed infinity pipe crafter input snapping to work on furnaces and rocket silos as well as assembling machines
+    - Removed defunct infinity pipe snapping, which hasn't worked since fluid mixing was re-introduced
+  Bugfixes:
+    - Fixed edge-cases where infinity pipe crafter snapping did not work correctly
+    - Fixed the default forces in the testing scenario not having the bot buffs
+---------------------------------------------------------------------------------------------------
+Version: 1.5.18
+Date: 2020-09-15
+  Features:
+    - Added rocket launch tracking to the testing scenario
+  Changes:
+    - Testing scenario will chart around a force's spawnpoint if it is changed, rather than always 0,0
+    - Testing scenario now buffs each force's construction order speed
+      - This can be reverted using the `force editor -> edit other properties`
+  Bugfixes:
+    - Fixed that mod settings would not be preserved when entering the testing scenario
+---------------------------------------------------------------------------------------------------
+Version: 1.5.17
+Date: 2020-09-14
+  Changes:
+    - Adjusted Cursor Enhancements overrides
+    - The mod will only give the `/cheat all` loadout if in EE's testing scenario
+---------------------------------------------------------------------------------------------------
+Version: 1.5.16
+Date: 2020-09-13
+  Changes:
+    - The testing scenario now enables cheat mode for new players itself, rather than EE doing it
+  Bugfixes:
+    - Fixed a crash when the scenario would enable cheat mode for a new player
+---------------------------------------------------------------------------------------------------
+Version: 1.5.15
+Date: 2020-09-13
+  Features:
+    - Added beacon slot picture definitions for the super modules
+    - Added Cursor Enhancements overrides for testing tools
+    - Added Russian translation by Apareshka
+    - Added sounds when opening/closing infintity accumulators and infinity loaders
+  Changes:
+    - Super module icons are now tinted from a greyscale base, significantly improving their appearance
+  Bugfixes:
+    - Fixed a crash when disabling cheat mode while in the map editor
+    - Fixed a crash with inventory sync when toggling the map editor from the ghost controller
+    - Fixed aggregate chests not setting their filters when placed
+    - Fixed character cheats not being applied when the character enables cheat mode in a non-character controller
+    - Fixed incorrect error message when typing `/EditorExtensions disable-cheat-mode` while cheat mode was already disabled
+    - Fixed inventory sync destroying items if the non-editor controller doesn't have all of the corresponding inventories
+    - Fixed some broken migrations when converting to EE from Infinity Mode
+    - Fixed the super beacon discoloring the modules in its slots
+    - Fixed the testing tool recipes not being unlocked if a scenario starts the player in cheat mode
+---------------------------------------------------------------------------------------------------
+Version: 1.5.14
+Date: 2020-09-08
+  Changes:
+    - Testing scenario will only chart once, rather than on every player join
+    - Removed dialog message when first loading the testing scenario
+    - Disabled AAI Industry's crash site in the testing scenario
+  Bugfixes:
+    - Fixed a crash when changing player settings
+    - Fixed that activating Space Exploration's satellite view would unlock testing tools and toggle inventory sync
+    - Fixed that the infinity inventory filters buttons would not update their location on a display resolution or scale change
+    - Fixed that the mod did not listen for entity cloning events
+---------------------------------------------------------------------------------------------------
+Version: 1.5.13
+Date: 2020-08-23
+  Changes:
+    - Changed snap-to-pipe behavior of infinity pipes to just set their fluid filter, but not void their contents
+  Optimizations:
+    - Improved performance of aggregate chest setup by 10x
+  Bugfixes:
+    - Fixed infinity loaders not snapping to newly built standard loaders
+    - Fixed infinity pipe snapping not working at all
+    - Fixed several missing migrations, leaving behind useless data in global
+---------------------------------------------------------------------------------------------------
+Version: 1.5.12
+Date: 2020-08-22
+  Features:
+    - Inventory sync now syncs the "hand" position as well
+  Bugfixes:
+    - Fixed aggregate chests not counting spidertron remotes when setting their inventory size
+    - Fixed infinity loaders not snapping when facing directly into another loader
+    - Fixed another edge case where contents would be spilled during inventory sync
+---------------------------------------------------------------------------------------------------
+Version: 1.5.11
+Date: 2020-08-15
+  Changes:
+    - Updated to Factorio 1.0
+  Bugfixes:
+    - Fixed a crash with Artisanal Reskins
+---------------------------------------------------------------------------------------------------
+Version: 1.5.10
+Date: 2020-08-09
+  Features:
+    - Added infinity loader support for Omnicompression
+  Changes:
+    - Moved infinity loader generation to data-final-fixes to catch absolutely all belt types
+  Bugfixes:
+    - Fixed a potential crash if any GUI handlers were removed between versions
+---------------------------------------------------------------------------------------------------
+Version: 1.5.9
+Date: 2020-07-26
+  Features:
+    - Entering an unrecognized command will print a message saying so
+  Changes:
+    - Split testing tool recipes into their own category
+    - Hid Krastorio 2 dependency
+  Bugfixes:
+    - Fixed a crash with aggregate chests when there was more than one "mining-tool" prototype in the game
+    - Fixed the Transport Drones mod causing aggregate chests to have one less extra slot for inserters
+    - Fixed a crash upon building an infinity loader in an illegal location
+---------------------------------------------------------------------------------------------------
+Version: 1.5.8
+Date: 2020-07-09
+  Changes:
+    - Krastorio 2 crash site is now disabled when entering testing scenario
+---------------------------------------------------------------------------------------------------
+Version: 1.5.7
+Date: 2020-06-24
+  Bugfixes:
+    - Fixed a crash related to GUI style changes in Factorio 0.18.33
+---------------------------------------------------------------------------------------------------
+Version: 1.5.6
+Date: 2020-06-13
+  Features:
+    - Added a setting for preventing the initial pause when entering the editor for the first time
+    - Added a super roboport setup to the testing scenario map
+  Changes:
+    - Renamed tesseract chest to aggregate chest, to avoid confusion with its functionality
+    - Testing scenario no longer has clouds
+---------------------------------------------------------------------------------------------------
+Version: 1.5.5
+Date: 2020-06-08
+  Changes:
+    - Super robots are now 1 million times faster
+    - Super robots can carry up to 1000 items at a time
+  Bugfixes:
+    - ACTUALLY added the pre-built testing level - the mod packager ignored the level file when zipping the mod!
+---------------------------------------------------------------------------------------------------
+Version: 1.5.4
+Date: 2020-06-01
+  Bugfixes:
+    - Removed Recipe Book script data from testing scenario level
+---------------------------------------------------------------------------------------------------
+Version: 1.5.3
+Date: 2020-06-01
+  Changes:
+    - Changed window titlebar drag behavior to be in line with vanilla (you can drag anywhere on the titlebar's flow)
+    - Testing scenario is now a pre-generated world, vastly speeding up load time
+---------------------------------------------------------------------------------------------------
+Version: 1.5.2
+Date: 2020-05-28
+  Features:
+    - Added testing scenario - the world generates with lab tiles and cheat mode is enabled from the start
+---------------------------------------------------------------------------------------------------
+Version: 1.5.1
+Date: 2020-05-26
+  Changes:
+    - Removed testing scenario - it doesn't work yet!
+---------------------------------------------------------------------------------------------------
+Version: 1.5.0
+Date: 2020-05-26
+  Features:
+    - Added super energy shield
+    - Added super night vision
+    - Added a super energy shield and super night vision to the /cheat all loadout
+    - Added /EditorExtensions disable-cheat-mode command, which disables cheat mode and removes the testing tools recipes
+    - Cheat entities now have a purple map color
+    - Inventory sync now syncs slot filters as well as contents
+  Changes:
+    - Refactored the mod to improve performance and code structure
+    - Switched from RaiLuaLib to FLib
+    - New infinity loader icon
+    - Removed infinity combinator due to bad performance, clunky internals, and low usage
+    - Significantly optimized infinity wagon blueprinting logic
+    - Updated item / entity naming scheme to more accurately reflect what they do
+    - Updated GUI styling to match the 0.18.27 style overhaul
+  Bugfixes:
+    - Fixed a crash when connecting an infinity pipe to a crafting machine with no set recipe
+    - Fixed a crash with inventory sync when in god mode
+    - Fixed that entering cheat mode with inventory-expanding armor equipped would unequip the armor for a split second, causing items to spill on the ground
+    - Fixed the infinity pipe not appearing in item filters menu
+    - Fixed that super exoskeletons could not be placed in every equipment grid
+---------------------------------------------------------------------------------------------------
+Version: 1.4.1
+Date: 2020-04-24
+  Bugfixes:
+    - Fixed RaiLuaLib version dependency
+---------------------------------------------------------------------------------------------------
+Version: 1.4.0
+Date: 2020-04-24
+  Features:
+    - Added new hi-res icons for infinity chests and tesseract chests
+    - Inventory sync is now able to be toggled separately from cheat mode, using /EditorExtensions toggle-inventory-sync
+  Changes:
+    - Non-logistic infinity and tesseract chests now have a slightly different color, to be able to distinguish them from vanilla infinity chests
+    - Tesseract and infinity chest graphics are now packged with the mod
+    - Infinity fuel icon now uses rocket fuel instead of nuclear fuel, eliminating the ugly glow
+    - Refactored inventory and cursor sync to use the new script inventories feature instead of invisible chests
+    - Removed /ee_cheat command, use /cheat all instead
+    - Removed remote interface for infinity loader, it's not really needed
+  Bugfixes:
+    - Fixed that mining an infinity robot would return its non-infinity version
+    - Fixed a crash when trying to open an infinity combinator more than once
+    - Fixed missing descriptions on infinity loader and infinity accumulator
+---------------------------------------------------------------------------------------------------
+Version: 1.3.3
+Date: 2020-04-09
+  Bugfixes:
+    - Fixed infinity pipe and infinity heat pipe returning their vanilla versions when mined
+---------------------------------------------------------------------------------------------------
+Version: 1.3.2
+Date: 2020-04-06
+  Bugfixes:
+    - Fixed infinity inserter and infinity pipe autoconfig not working
+---------------------------------------------------------------------------------------------------
+Version: 1.3.1
+Date: 2020-04-05
+  Bugfixes:
+    - Fixed several missing migrations
+    - Fixed stack sizes of infinity chests and tesseract chests
+---------------------------------------------------------------------------------------------------
+Version: 1.3.0
+Date: 2020-04-03
+  Features:
+    - Added Krastorio 2 compatibility for infinity loaders
+  Changes:
+    - Added a prefix to all items and entities to avoid conflicts with other mods
+    - Switched to using our own versions of the built-in infinity chest, infinity pipe, and heat interface to avoid compatibility issues
+    - Brightened the crafting group icon to make it easier to see when selected
+    - Removed lualib and made it a separate mod, RaiLuaLib
+  Bugfixes:
+    - Fixed the alignment and styling of titlebars which broke due to the new character GUI
+    - Fixed a crash on trying to disable inventory sync when it wasn't enabled
+    - Fixed that mining an infinity combinator would give you a regular constant combinator
+    - Fixed that an infinity loader of a modded belt type would break upon the mod's removal
+---------------------------------------------------------------------------------------------------
+Version: 1.2.1
+Date: 2020-02-21
+  Bugfixes:
+    - Fixed a crash when using an infinity loader with modded belts (forgot a comma)
+    - Fixed a crash when setting an infinity fluid wagon to have at most or exactly zero fluid
+---------------------------------------------------------------------------------------------------
+Version: 1.2.0
+Date: 2020-02-20
+  Features:
+    - Added inventory and cursor syncronization between play modes (only active after enabling cheat mode)
+    - Added infinity inventory filters import/export dialog
+    - Added default infinity inventory filters setting
+  Changes:
+    - Improved styling of infinity loader filter buttons and infinity combinator selected button
+    - Editor GUI character tab is now hidden by default
+  Bugfixes:
+    - Fixed missing key error when trying to build over an infinity loader
+    - Fixed infinity lab not properly detecting all possible science packs
+---------------------------------------------------------------------------------------------------
+Version: 1.1.2
+Date: 2020-02-14
+  Changes:
+    - Updated crafting group icon
+    - Removed tesseract storage chest due to performance problems making it completely unusable
+  Bugfixes:
+    - Fixed a crash when using the /ee_cheat command without a character
+---------------------------------------------------------------------------------------------------
+Version: 1.1.1
+Date: 2020-02-03
+  Bugfixes:
+    - Fixed a crash when another mod's custom GUI was closed before this mod got to read it
+    - Fixed a crash when an infinity pipe is snapping to a fluidbox with an index greater than one
+    - Fixed incorrect infinity pipe snapping behavior when there are multiple infinity pipes connected to the same crafting machine
+---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 2020-02-01
+  Features:
+    - Added infinity exoskeleton equipment
+    - Added /ee_cheat command that is similar to /cheat, but outfits you with infinity equipment instead of vanilla equipment
+  Changes:
+    - Buffed infinity roboport to have 100 charging slots and charge all bots in the center, significantly speeding it up
+    - Removed some redundant code for showing the testing items
+  Bugfixes:
+    - Fixed that the electric energy interface would show in the crafting menu when using /cheat
+    - Fixed that infinity equipment wasn't included in the crafting recipes after using /cheat
+    - Fixed that infinity equipment would not be tinted when stuck in armor
+---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 2020-01-26
+  Features:
+    - If you are already in cheat mode when Editor Extensions is added to your save, the testing tools will unlock themselves automatically
+    - The toggle map editor shortcut will visually disable itself if the player is not an admin
+  Bugfixes:
+    - Fixed not being able to unlock testing tools using /cheat if cheat mode was already enabled
+    - Fixed data stage code structure to prevent leaking globals into other mods, and fix many incompatibilities both known and unknown
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 2020-01-25
+  Bugfixes:
+    - Fixed incorrect infinity heat pipe picture definition causing a crash in some cases
+    - Fixed save/load safety of event GUI filters
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 2020-01-25
+  Features:
+    - Initial release
